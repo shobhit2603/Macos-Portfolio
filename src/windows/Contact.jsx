@@ -11,10 +11,10 @@ const Contact = () => {
             </div>
 
             <div className="p-5 space-y-5">
-                <img src="/images/adrian.jpg" alt="Shobhit" className="w-20 rounded-full" />
+                <img src="/images/shobhit.jpg" alt="Shobhit" className="w-20 rounded-full" />
 
                 <h3>Let's Connect</h3>
-                <p>Got an Idea? A Bug to Squash? Or just wanna talk tech? I'm in.</p>
+                <p>Got an Idea? A Project to build? Or just wanna talk tech? I'm in.</p>
                 <p><b>Email:</b> shrivastavashobhit706@gmail.com</p>
 
                 <ul>
