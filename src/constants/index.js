@@ -188,19 +188,19 @@ const photosLinks = [
 const gallery = [
     {
         id: 1,
-        img: "/images/gal1.png",
+        img: "/images/shobhit1.jpg",
     },
     {
         id: 2,
-        img: "/images/gal2.png",
+        img: "/images/shobhit4.jpg",
     },
     {
         id: 3,
-        img: "/images/gal3.png",
+        img: "/images/shobhit3.jpg",
     },
     {
         id: 4,
-        img: "/images/gal4.png",
+        img: "/images/shobhit2.jpg",
     },
 ];
 
@@ -397,7 +397,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-10 left-5",
-            imageUrl: "/images/shobhit.jpg",
+            imageUrl: "/images/shobhit2.jpg",
         },
         {
             id: 2,
@@ -406,16 +406,16 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-28 right-72",
-            imageUrl: "/images/shobhit1.jpg",
+            imageUrl: "/images/shobhit5.jpg",
         },
         {
             id: 3,
-            name: "conference-me.png",
+            name: "professional-me.png",
             icon: "/images/image.png",
             kind: "file",
             fileType: "img",
             position: "top-52 left-80",
-            imageUrl: "/images/adrian-3.jpeg",
+            imageUrl: "/images/shobhit4.jpg",
         },
         {
             id: 4,
