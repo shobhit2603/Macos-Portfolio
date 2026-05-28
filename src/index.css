@@ -7,7 +7,11 @@ body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
+<<<<<<< HEAD
   background-image: url("/images/wallpaper.png");
+=======
+  background-image: url("/images/wallpaper5.png");
+>>>>>>> 7c9b1e57735e7f21a9f1538b3792eaf86ce93424
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
