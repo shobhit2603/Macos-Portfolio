@@ -15,7 +15,7 @@ const Navbar = () => {
     }, [appleMenuOpen]);
 
     return (
-        <nav className="relative z-[9999]">
+        <nav className="relative z-9999">
             <div className="relative flex items-center">
                 <img 
                     src="/images/logo.svg" 
@@ -65,4 +65,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;
