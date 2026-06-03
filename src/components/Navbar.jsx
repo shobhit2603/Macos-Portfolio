@@ -40,7 +40,7 @@ const Navbar = () => {
                         </button>
                     </div>
                 )}
-                <p className="font-bold select-none cursor-default">Shobhit's Portfolio</p>
+                <p className="font-semibold select-none cursor-default">Shobhit's Portfolio</p>
                 <ul>
                     {navLinks.map(({ id, name, type }) => (
                         <li key={id} onClick={() => openWindow(type)}>
