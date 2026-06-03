@@ -102,27 +102,27 @@ const blogPosts = [
 const techStack = [
     {
         category: "Languages",
-        items: ["JavaScript", "TypeScript", "Core JAVA"],
+        items: ["JavaScript (ES6+)", "HTML5", "CSS3", "SCSS"],
     },
     {
         category: "Frontend",
-        items: ["React.js", "Next.js", "HTML", "CSS", "EJS"],
-    },
-    {
-        category: "Styling",
-        items: ["Tailwind CSS", "Bootstrap", "Figma"],
+        items: ["React.js", "Next.js", "Redux Toolkit", "TanStack React Query", "Tailwind CSS", "GSAP", "EJS"],
     },
     {
         category: "Backend",
-        items: ["Node.js", "Express", "Postman"],
+        items: ["Node.js", "Express.js", "RESTful APIs", "Microservices", "Socket.io", "WebSockets", "JWT Authentication"],
     },
     {
-        category: "Database",
-        items: ["MongoDB", "Mongoose", "SQL"],
+        category: "Databases",
+        items: ["MongoDB", "Mongoose", "Database Indexing", "Query Optimization"],
     },
     {
-        category: "Dev Tools",
-        items: ["VS Code", "Git", "GitHub"],
+        category: "Cloud & DevOps",
+        items: ["Git/GitHub", "Docker", "Kubernetes", "AWS (ECS, ECR, EC2)", "CI/CD Pipelines"],
+    },
+    {
+        category: "AI & Systems",
+        items: ["LangChain", "Generative AI Integration", "Pinecone (Vector DB)", "RAG", "LLMs"],
     },
 ];
 
@@ -136,24 +136,10 @@ const socials = [
     },
     {
         id: 2,
-        text: "Platform",
-        icon: "/icons/atom.svg",
-        bg: "#4bcb63",
-        link: "https://jsmastery.com/",
-    },
-    {
-        id: 3,
-        text: "Twitter/X",
-        icon: "/icons/twitter.svg",
-        bg: "#ff866b",
-        link: "https://x.com/ShobhitShr55882",
-    },
-    {
-        id: 4,
         text: "LinkedIn",
         icon: "/icons/linkedin.svg",
         bg: "#05b6f6",
-        link: "https://www.linkedin.com/in/shobhit-shrivastava-dev",
+        link: "https://www.linkedin.com/in/shobhit-shrivastava-dev/",
     },
 ];
 
@@ -225,7 +211,7 @@ const WORK_LOCATION = {
         // ▶ Project 1
         {
             id: 5,
-            name: "Nike Ecommerce Website Application",
+            name: "Echo.AI",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-10 left-5", // icon position inside Finder
@@ -233,30 +219,30 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "Nike Project.txt",
+                    name: "Echo.AI Project.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 left-10",
                     description: [
-                        "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-                        "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-                        "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-                        "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+                        "Echo.AI is a Next-Gen AI Chat App built with Next.js, React, Redux, Node.js, Express.js, MongoDB, Mistral AI, LangChain, Pinecone, Tavily, and Docker.",
+                        "Developed a full-stack chat application utilizing Server-Sent Events (SSE) to stream AI responses chunk-by-chunk, reducing perceived response wait time by 85% (Time-to-First-Token < 200ms).",
+                        "Engineered a document QA pipeline using Pinecone vector database; parsed uploads into 1000-character chunks with a 20% overlap and generated 1024-dimension embeddings for precise semantic search.",
+                        "Integrated Tavily AI web search to automatically retrieve the top 5 live web sources when local document context is missing, solving the problem of LLM knowledge cutoffs and hallucinations.",
                     ],
                 },
                 {
                     id: 2,
-                    name: "nike.com",
+                    name: "echo-ai.com",
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+                    href: "https://echo-ai-ten-zeta.vercel.app/",
                     position: "top-10 right-20",
                 },
                 {
                     id: 4,
-                    name: "nike.png",
+                    name: "echo-ai.png",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",
@@ -265,11 +251,11 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
+                    name: "GitHub Repo",
                     icon: "/images/plain.png",
                     kind: "file",
-                    fileType: "fig",
-                    href: "https://google.com",
+                    fileType: "url",
+                    href: "https://github.com/shobhit2603/Echo.AI",
                     position: "top-60 right-20",
                 },
             ],
@@ -278,7 +264,7 @@ const WORK_LOCATION = {
         // ▶ Project 2
         {
             id: 6,
-            name: "AI Resume Analyzer",
+            name: "FlexIt",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-52 right-80",
@@ -286,30 +272,30 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "AI Resume Analyzer Project.txt",
+                    name: "FlexIt Project.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 right-10",
                     description: [
-                        "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-                        "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-                        "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-                        "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+                        "FlexIt is a Real-Time Social Media Platform built with React, Redux Toolkit, Tailwind CSS, Node.js, Express.js, MongoDB, Socket.io, ImageKit CDN, and Docker.",
+                        "Engineered a real-time messaging system using Socket.io and MongoDB, delivering direct messages instantly in under 100ms while eliminating HTTP polling overhead.",
+                        "Optimized media processing and page load speeds by 40% via ImageKit CDN integration and lazy-loading video posts using the Intersection Observer API.",
+                        "Implemented secure dual-method login (Google OAuth 2.0 and local JWT via HTTP-only cookies) and modularized deployment with Docker containerization.",
                     ],
                 },
                 {
                     id: 2,
-                    name: "ai-resume-analyzer.com",
+                    name: "flexit.com",
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+                    href: "https://flexit-three.vercel.app/",
                     position: "top-20 left-20",
                 },
                 {
                     id: 4,
-                    name: "ai-resume-analyzer.png",
+                    name: "flexit.png",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",
@@ -318,11 +304,11 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
+                    name: "GitHub Repo",
                     icon: "/images/plain.png",
                     kind: "file",
-                    fileType: "fig",
-                    href: "https://google.com",
+                    fileType: "url",
+                    href: "https://github.com/shobhit2603/FlexIt",
                     position: "top-60 left-5",
                 },
             ],
@@ -331,7 +317,7 @@ const WORK_LOCATION = {
         // ▶ Project 3
         {
             id: 7,
-            name: "Food Delivery App",
+            name: "Momentum",
             icon: "/images/folder.png",
             kind: "folder",
             position: "top-10 left-80",
@@ -339,30 +325,30 @@ const WORK_LOCATION = {
             children: [
                 {
                     id: 1,
-                    name: "Food Delivery App Project.txt",
+                    name: "Momentum Project.txt",
                     icon: "/images/txt.png",
                     kind: "file",
                     fileType: "txt",
                     position: "top-5 left-10",
                     description: [
-                        "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-                        "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-                        "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-                        "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+                        "Momentum is a Squad Productivity & Consistency App built with Next.js, React, Node.js, Express.js, MongoDB, Mongoose, Passport.js, Tailwind CSS v4, and PWA.",
+                        "Developed a social productivity app that drives team consistency by tracking squad task completion rates (Win Rates) and streaks on a shared daily feed.",
+                        "Designed a daily 'Midnight Purge' system that automatically marks unfinished tasks as failed at midnight, ensuring 100% honest consistency tracking.",
+                        "Built a Progressive Web App (PWA) with service worker caching for 100% offline access, featuring voice-to-text task creation and haptic feedback.",
                     ],
                 },
                 {
                     id: 2,
-                    name: "food-delivery-app.com",
+                    name: "momentum.com",
                     icon: "/images/safari.png",
                     kind: "file",
                     fileType: "url",
-                    href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
+                    href: "https://momentum-dun-rho.vercel.app/",
                     position: "top-10 right-20",
                 },
                 {
                     id: 4,
-                    name: "food-delivery-app.png",
+                    name: "momentum.png",
                     icon: "/images/image.png",
                     kind: "file",
                     fileType: "img",
@@ -371,11 +357,11 @@ const WORK_LOCATION = {
                 },
                 {
                     id: 5,
-                    name: "Design.fig",
+                    name: "GitHub Repo",
                     icon: "/images/plain.png",
                     kind: "file",
-                    fileType: "fig",
-                    href: "https://google.com",
+                    fileType: "url",
+                    href: "https://github.com/shobhit2603/Momentum",
                     position: "top-60 right-20",
                 },
             ],
@@ -427,10 +413,38 @@ const ABOUT_LOCATION = {
             subtitle: "Meet the Developer Behind the Code",
             image: "/images/shobhit1.jpg",
             description: [
-                "Hey! I’m Shobhit 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-                "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-                "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-                "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+                "Hey! I’m Shobhit 👋, a Full-Stack Developer specializing in modern web applications, cloud-native systems, and AI-powered solutions.",
+                "I have experience building scalable products using React.js, Next.js, Node.js, Express.js, MongoDB, Docker, and AWS, with expertise in real-time communication, API architecture, performance optimization, and agile methodologies.",
+                "I'm passionate about system design, clean engineering practices, and creating seamless user experiences that feel smooth, fast, and delightful.",
+                "Outside of writing clean and optimized code, you'll find me tweaking layouts at 2AM, exploring new tech, or thinking about my next side project! 🚀",
+            ],
+        },
+        {
+            id: 5,
+            name: "internship.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-10 right-10",
+            subtitle: "Web Developer Intern @ Database Cloud Education",
+            description: [
+                "Database Cloud Education & Development Pvt. Ltd. (April 2023)",
+                "Collaborated in an Agile team framework to deliver 3 performance-driven web projects using ES6+ and RESTful APIs.",
+                "Utilized advanced debugging and unit testing workflows to optimize latency of the application codes by 15%.",
+            ],
+        },
+        {
+            id: 6,
+            name: "education.txt",
+            icon: "/images/txt.png",
+            kind: "file",
+            fileType: "txt",
+            position: "top-60 right-10",
+            subtitle: "Truba Institute of Engineering and IT",
+            description: [
+                "Bachelor of Technology (B.Tech) - Computer Science and Engineering (2021 - 2025)",
+                "Truba Institute of Engineering and Information Technology, (RGPV University), Bhopal, India",
+                "CGPA: 7.1/10",
             ],
         },
     ],
@@ -501,6 +515,18 @@ const WINDOW_CONFIG = {
     terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+    settings: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
+
+export const WALLPAPERS = [
+    { id: 1, name: "Sonoma Light", path: "/images/wallpaper.png" },
+    { id: 2, name: "Sonoma Dark", path: "/images/wallpaper2.png" },
+    { id: 3, name: "Ventura", path: "/images/wallpaper3.png" },
+    { id: 4, name: "Monterey", path: "/images/wallpaper4.png" },
+    { id: 5, name: "Big Sur", path: "/images/wallpaper5.png" },
+    { id: 6, name: "Catalina", path: "/images/wallpaper6.png" },
+    { id: 7, name: "Mojave", path: "/images/wallpaper7.png" },
+    { id: 8, name: "High Sierra", path: "/images/wallpaper8.png" }
+];
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

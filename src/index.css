@@ -163,45 +163,57 @@ body {
   }
 
   #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply w-xl absolute top-32 left-1/12 bg-[#1c1c1e] text-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden border border-white/10;
+
+    #window-header {
+      @apply bg-[#2c2c2e] border-b border-white/10 text-gray-300;
+    }
 
     h2 {
-      @apply font-bold text-sm text-center w-full;
+      @apply font-bold text-sm text-center w-full text-gray-300;
     }
 
     .techstack {
       @apply text-sm font-roboto p-5;
 
       .label {
-        @apply flex items-center ms-10 mt-7;
+        @apply flex items-center ms-10 mt-7 text-gray-400;
       }
 
       .content {
-        @apply py-5 my-5 border-y border-dashed space-y-1;
+        @apply py-5 my-5 border-y border-white/15 border-dashed space-y-3;
 
         li {
           .check {
-            @apply text-[#00A154] w-5;
+            @apply text-[#30d158] w-5;
           }
 
           h3 {
-            @apply font-semibold text-[#00A154] w-32 ms-5;
+            @apply font-semibold text-[#30d158] w-32 ms-5 flex-none;
           }
 
-          ul {
-            @apply flex items-center gap-3;
+          .technologies {
+            @apply flex-1 text-gray-300 leading-normal;
           }
         }
       }
 
       .footnote {
-        @apply text-[#00A154] space-y-1;
+        @apply text-[#30d158] space-y-1;
 
         p {
           @apply flex items-center;
 
           svg {
             @apply w-5 me-5;
+          }
+        }
+
+        .render-time {
+          @apply text-gray-400 flex items-center;
+
+          svg {
+            @apply w-5 me-5 text-gray-400;
           }
         }
       }
@@ -377,7 +389,7 @@ body {
   }
 
   #home {
-    @apply relative z-0 max-sm:hidden;
+    @apply absolute inset-0 z-0 max-sm:hidden;
 
     ul {
       li {
@@ -392,5 +404,104 @@ body {
         }
       }
     }
+  }
+
+  #settings {
+    @apply w-3xl absolute top-28 left-3/12 bg-[#1c1c1e] text-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden border border-white/10;
+
+    #window-header {
+      @apply bg-[#2c2c2e] border-b border-white/10 text-gray-300;
+    }
+
+    .settings-container {
+      @apply flex w-full h-[480px];
+    }
+
+    .sidebar {
+      @apply w-1/4 bg-[#252527] border-r border-white/10 flex flex-col p-3 select-none flex-none h-full;
+
+      .profile {
+        @apply flex items-center gap-3 p-2 mb-4 border-b border-white/5;
+        img {
+          @apply size-9 rounded-full object-cover;
+        }
+      }
+
+      ul {
+        @apply space-y-1;
+
+        li {
+          @apply flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-colors text-sm font-medium;
+
+          &.active {
+            @apply bg-blue-600 text-white;
+          }
+
+          &.inactive {
+            @apply text-gray-400 hover:bg-white/5;
+          }
+        }
+      }
+    }
+
+    .content-area {
+      @apply flex-1 p-6 overflow-y-auto bg-[#1c1c1e] select-none h-full;
+
+      h3 {
+        @apply text-lg font-bold text-gray-100 mb-6;
+      }
+
+      .wallpaper-grid {
+        @apply grid grid-cols-3 gap-4 pb-10;
+
+        .wallpaper-card {
+          @apply flex flex-col gap-2 cursor-pointer;
+
+          .thumbnail-container {
+            @apply aspect-video rounded-lg overflow-hidden border-2 border-transparent transition-all;
+
+            &.active {
+              @apply border-blue-500 shadow-lg scale-105;
+            }
+
+            &:hover:not(.active) {
+              @apply border-white/20 scale-102;
+            }
+
+            img {
+              @apply size-full object-cover;
+            }
+          }
+
+          p {
+            @apply text-xs text-center text-gray-400 font-medium;
+          }
+        }
+      }
+    }
+  }
+
+  .desktop-context-menu {
+    @apply absolute w-48 bg-[#1e1e1e]/85 backdrop-blur-md border border-white/10 rounded-lg p-1 shadow-2xl flex flex-col z-[99999];
+
+    button {
+      @apply w-full text-left px-3 py-1.5 rounded text-xs font-medium text-gray-200 hover:bg-blue-600 hover:text-white transition-colors cursor-pointer;
+    }
+  }
+
+  .apple-menu {
+    @apply absolute top-8 left-0 w-52 bg-[#1e1e1e]/85 backdrop-blur-md border border-white/10 rounded-lg p-1 shadow-2xl flex flex-col z-[99999];
+
+    button {
+      @apply w-full text-left px-3 py-1.5 rounded text-xs font-medium text-gray-200 hover:bg-blue-600 hover:text-white transition-colors cursor-pointer;
+    }
+  }
+
+  .menu-separator {
+    @apply h-px bg-white/10 my-1;
+  }
+
+  .window-wrapper {
+    will-change: transform, opacity;
   }
 }

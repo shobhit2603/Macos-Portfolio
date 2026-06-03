@@ -24,27 +24,23 @@ const Terminal = () => {
 
                 <ul className="content">
                     {techStack.map(({ category, items }) => (
-                        <li className="flex items-center" key={category}>
-                            <Check className="check" size={20} />
+                        <li className="flex items-start" key={category}>
+                            <Check className="check mt-0.5" size={20} />
                             <h3>{category}</h3>
-                            <ul>
-                                {items.map((item, i) => (
-                                    <li key={i}>
-                                        {item}{i < items.length - 1 ? ',' : ''}
-                                    </li>
-                                ))}
-                            </ul>
+                            <p className="technologies">
+                                {items.join(', ')}
+                            </p>
                         </li>
                     ))}
                 </ul>
 
                 <div className="footnote">
                     <p>
-                        <Check size={20} /> 5 of 5 stacks loaded successfully (100%)
+                        <Check size={20} /> {techStack.length} of {techStack.length} stacks loaded successfully (100%)
                     </p>
 
-                    <p className="text-black">
-                        <Flag size={15} fill="black" />
+                    <p className="render-time">
+                        <Flag size={15} fill="#a3a3a3" />
                         Render time: 6ms
                     </p>
                 </div>

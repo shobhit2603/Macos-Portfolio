@@ -14,17 +14,25 @@ const Dock = () => {
         if (!dock) return;
 
         const icons = dock.querySelectorAll('.dock-icon');
+        let cachedCoords = [];
+
+        const updateCachedCoords = () => {
+            const { left: dockLeft } = dock.getBoundingClientRect();
+            cachedCoords = Array.from(icons).map((icon) => {
+                const rect = icon.getBoundingClientRect();
+                return {
+                    el: icon,
+                    center: rect.left - dockLeft + rect.width / 2
+                };
+            });
+        };
 
         const animateIcons = (mouseX) => {
-            const { left } = dock.getBoundingClientRect();
-
-            icons.forEach((icon) => {
-                const { left: iconLeft, width } = icon.getBoundingClientRect();
-                const center = iconLeft - left + width / 2;
+            cachedCoords.forEach(({ el, center }) => {
                 const distance = Math.abs(mouseX - center);
                 const intensity = Math.exp(-(distance ** 2.5 / 20000));
 
-                gsap.to(icon, {
+                gsap.to(el, {
                     scale: 1 + 0.25 * intensity,
                     y: -15 * intensity,
                     duration: 0.2,
@@ -35,7 +43,9 @@ const Dock = () => {
 
         const handleMouseMove = (e) => {
             const { left } = dock.getBoundingClientRect();
-
+            if (cachedCoords.length === 0) {
+                updateCachedCoords();
+            }
             animateIcons(e.clientX - left);
         };
 
@@ -48,12 +58,17 @@ const Dock = () => {
                     ease: "power1.out"
                 }),
             );
+
+        dock.addEventListener('mouseenter', updateCachedCoords);
         dock.addEventListener('mousemove', handleMouseMove);
         dock.addEventListener('mouseleave', resetIcons);
+        window.addEventListener('resize', updateCachedCoords);
 
         return () => {
+            dock.removeEventListener('mouseenter', updateCachedCoords);
             dock.removeEventListener('mousemove', handleMouseMove);
             dock.removeEventListener('mouseleave', resetIcons);
+            window.removeEventListener('resize', updateCachedCoords);
         };
     }, []);
 

@@ -20,31 +20,57 @@ const setupTextHover = (container, type) => {
 
     const letters = container.querySelectorAll('span');
     const { min, max, default: base } = FONT_WEIGHTS[type];
+    let cachedCoords = [];
+
+    const updateCachedCoords = () => {
+        const { left: containerLeft } = container.getBoundingClientRect();
+        cachedCoords = Array.from(letters).map((letter) => {
+            const rect = letter.getBoundingClientRect();
+            return {
+                el: letter,
+                center: rect.left - containerLeft + rect.width / 2
+            };
+        });
+    };
 
     const animateLetter = (letter, weight, duration = 0.25) => {
         return gsap.to(letter, { duration, ease: "power2.out", fontVariationSettings: `'wght' ${weight}` });
     };
 
     const handleMouseMove = (e) => {
-        const { left } = container.getBoundingClientRect();
-        const mouseX = e.clientX - left;
+        const { left: containerLeft } = container.getBoundingClientRect();
+        const mouseX = e.clientX - containerLeft;
 
-        letters.forEach((letter) => {
-            const { left: l, width: w } = letter.getBoundingClientRect();
-            const distance = Math.abs(mouseX - (l - left + w / 2));
+        if (cachedCoords.length === 0) {
+            updateCachedCoords();
+        }
+
+        cachedCoords.forEach(({ el, center }) => {
+            const distance = Math.abs(mouseX - center);
             const intensity = Math.exp(-(distance ** 2 / 20000));
 
-            animateLetter(letter, min + (max - min) * intensity);
+            animateLetter(el, min + (max - min) * intensity);
         });
     };
-    const handleMouseLeave = () => letters.forEach((letter) => animateLetter(letter, base, 0.3))
+
+    const handleMouseEnter = () => {
+        updateCachedCoords();
+    };
+
+    const handleMouseLeave = () => {
+        letters.forEach((letter) => animateLetter(letter, base, 0.3));
+    };
 
     container.addEventListener('mousemove', handleMouseMove);
+    container.addEventListener('mouseenter', handleMouseEnter);
     container.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('resize', updateCachedCoords);
 
     return () => {
         container.removeEventListener('mousemove', handleMouseMove);
+        container.removeEventListener('mouseenter', handleMouseEnter);
         container.removeEventListener('mouseleave', handleMouseLeave);
+        window.removeEventListener('resize', updateCachedCoords);
     }
 };
 

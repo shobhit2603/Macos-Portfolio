@@ -50,7 +50,7 @@ const Photos = () => {
                                     })
                                 }
                             >
-                                <img src={img} alt={`Gallery image ${id}`} />
+                                <img src={img} alt={`Gallery image ${id}`} decoding="async" loading="lazy" />
                             </li>
                         ))}
                     </ul>
